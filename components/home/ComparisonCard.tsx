@@ -37,17 +37,16 @@ export function ComparisonCard({
         className={cn('relative', isReversed && 'md:order-2')}
       >
         <div
-          className={cn(
-            'rounded-lg overflow-hidden border shadow-2xl aspect-video flex items-center justify-center',
-            theme === 'solution'
-              ? 'border-primary-400/50 shadow-purple bg-gradient-to-br from-primary-50 to-primary-100'
-              : 'border-neutral-200 bg-neutral-100'
-          )}
+          className="rounded-lg overflow-hidden border shadow-2xl aspect-video flex items-center justify-center"
+          style={theme === 'solution'
+            ? { borderColor: '#9F7BFF', background: 'linear-gradient(135deg, #EADEFC 0%, #D3B9F9 100%)' }
+            : { borderColor: '#DCDBDD', backgroundColor: '#F4F4F4' }
+          }
         >
-          <div className={cn(
-            "text-sm",
-            theme === 'solution' ? 'text-primary-400' : 'text-neutral-400'
-          )}>[{image}]</div>
+          <div
+            className="text-sm font-medium"
+            style={{ color: theme === 'solution' ? '#7848FE' : '#959593' }}
+          >[{image}]</div>
         </div>
       </motion.div>
 
@@ -73,10 +72,8 @@ export function Headline({
 }) {
   return (
     <h3
-      className={cn(
-        'text-3xl font-semibold tracking-tight',
-        highlight ? 'bg-gradient-to-r from-primary-600 to-primary-500 bg-clip-text text-transparent' : 'text-neutral-900'
-      )}
+      className="text-3xl font-bold tracking-tight"
+      style={{ color: highlight ? '#7848FE' : '#000000' }}
     >
       {children}
     </h3>
@@ -111,8 +108,8 @@ export function Reality({ children }: { children: React.ReactNode }) {
 
 export function Impact({ children }: { children: React.ReactNode }) {
   return (
-    <div className="mt-6 p-4 bg-gradient-to-r from-primary-50 to-primary-100 rounded-lg border-l-4 border-primary-500 shadow-sm">
-      <p className="text-base font-semibold text-primary-700">{children}</p>
+    <div className="mt-6 p-4 rounded-lg border-l-4 shadow-sm" style={{ background: 'linear-gradient(135deg, #EADEFC 0%, #D3B9F9 100%)', borderColor: '#7848FE' }}>
+      <p className="text-base font-bold" style={{ color: '#280470' }}>{children}</p>
     </div>
   )
 }

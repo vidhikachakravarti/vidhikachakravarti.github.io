@@ -126,7 +126,7 @@ function FlowStep({ step }: { step: typeof steps[0] }) {
         animate={{ opacity: isInView ? 1 : 0.4 }}
         className="max-w-[560px]"
       >
-        <div className="text-sm font-mono text-primary-300 mb-2 font-semibold">
+        <div className="text-sm font-mono mb-2 font-semibold" style={{ color: '#D3B9F9' }}>
           STEP {String(step.number).padStart(2, '0')}
         </div>
 
@@ -134,17 +134,17 @@ function FlowStep({ step }: { step: typeof steps[0] }) {
           {step.title}
         </h3>
 
-        <p className="text-lg italic text-primary-200/80 mb-6">{step.tagline}</p>
+        <p className="text-lg italic mb-6" style={{ color: '#EADEFC' }}>{step.tagline}</p>
 
-        <p className="text-base leading-relaxed text-primary-100/90 mb-8">
+        <p className="text-base leading-relaxed mb-8" style={{ color: '#F9EAE4' }}>
           {step.description}
         </p>
 
         <div className="space-y-2">
           {step.impact.map((item, i) => (
             <div key={i} className="flex items-start gap-3">
-              <span className="text-primary-400 mt-1">✔</span>
-              <span className="text-primary-50">{item}</span>
+              <span className="mt-1" style={{ color: '#9F7BFF' }}>✔</span>
+              <span style={{ color: '#FFD2BB' }}>{item}</span>
             </div>
           ))}
         </div>
@@ -167,23 +167,23 @@ export function ProductFlow() {
   }, [])
 
   return (
-    <section className="relative bg-gradient-to-br from-primary-900 via-primary-800 to-neutral-900 text-white py-32 overflow-hidden">
-      {/* Decorative gradient orbs */}
+    <section className="relative text-white py-32 overflow-hidden" style={{ background: 'linear-gradient(135deg, #280470 0%, #1405D6 100%)' }}>
+      {/* Decorative circles */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 right-20 w-96 h-96 bg-primary-500/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 left-20 w-96 h-96 bg-primary-400/20 rounded-full blur-3xl" />
+        <div className="absolute top-20 right-20 w-96 h-96 rounded-full" style={{ backgroundColor: '#7848FE', opacity: 0.3 }} />
+        <div className="absolute bottom-20 left-20 w-96 h-96 rounded-full" style={{ backgroundColor: '#9F7BFF', opacity: 0.2 }} />
       </div>
 
       <div className="max-w-[1440px] mx-auto px-6 relative z-10">
         {/* Section intro */}
         <div className="text-center mb-24">
-          <div className="inline-flex items-center px-3 py-1 rounded-full bg-primary-400/20 border border-primary-400/30 text-primary-200 text-sm font-medium mb-4">
+          <div className="inline-flex items-center px-4 py-2 rounded-full border text-sm font-medium mb-4" style={{ backgroundColor: '#9F7BFF', borderColor: '#D3B9F9', color: 'white' }}>
             Complete Platform
           </div>
-          <h2 className="text-5xl font-semibold tracking-tight mb-6 bg-gradient-to-r from-white to-primary-100 bg-clip-text text-transparent">
+          <h2 className="text-5xl font-bold tracking-tight mb-6 text-white">
             From program design to measurable clinical impact
           </h2>
-          <p className="text-xl text-primary-100/90 max-w-3xl mx-auto">
+          <p className="text-xl max-w-3xl mx-auto" style={{ color: '#EADEFC' }}>
             A single system that takes you from care planning → daily execution
             → patient outcomes → population-level insights.
           </p>
@@ -194,14 +194,14 @@ export function ProductFlow() {
           {/* Sticky Visual */}
           <div className="hidden lg:block">
             <div className="sticky top-32 h-[600px]">
-              <div className="relative w-full h-full rounded-lg border border-primary-400/30 shadow-glow bg-gradient-to-br from-primary-800/50 to-neutral-900/50 backdrop-blur-sm flex items-center justify-center overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary-500/10 to-transparent" />
+              <div className="relative w-full h-full rounded-lg border flex items-center justify-center overflow-hidden shadow-2xl" style={{ borderColor: '#9F7BFF', background: 'linear-gradient(135deg, #D3B9F9 0%, #EADEFC 100%)' }}>
                 <motion.div
                   key={activeVisual}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.5 }}
-                  className="text-primary-200 text-sm text-center p-8 relative z-10"
+                  className="text-sm text-center p-8 relative z-10 font-medium"
+                  style={{ color: '#280470' }}
                 >
                   [{activeVisual}]
                 </motion.div>

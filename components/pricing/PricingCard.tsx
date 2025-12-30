@@ -66,11 +66,12 @@ export function PricingCard({ tier, billing, featured }: PricingCardProps) {
       hover
       className={cn(
         'relative h-full',
-        featured && 'border-2 border-primary-500 shadow-purple ring-2 ring-primary-400/20'
+        featured && 'border-2 shadow-2xl'
       )}
+      style={featured ? { borderColor: '#7848FE', boxShadow: '0 0 40px rgba(120, 72, 254, 0.3)' } : {}}
     >
       {featured && (
-        <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-primary-500 to-primary-400 text-white text-sm font-medium rounded-full shadow-lg">
+        <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 text-white text-sm font-bold rounded-full shadow-lg" style={{ background: 'linear-gradient(135deg, #7848FE 0%, #9F7BFF 100%)' }}>
           Most Popular
         </div>
       )}
@@ -81,11 +82,11 @@ export function PricingCard({ tier, billing, featured }: PricingCardProps) {
         <div>
           {typeof price === 'number' ? (
             <>
-              <div className="text-4xl font-bold text-primary-600">${price}</div>
+              <div className="text-4xl font-bold" style={{ color: '#7848FE' }}>${price}</div>
               <div className="text-sm text-neutral-500">/ month</div>
             </>
           ) : (
-            <div className="text-4xl font-bold text-primary-600">Custom</div>
+            <div className="text-4xl font-bold" style={{ color: '#7848FE' }}>Custom</div>
           )}
         </div>
 

@@ -26,28 +26,40 @@ export function Button({
     focus:outline-none focus:ring-2 focus:ring-offset-2
   `
 
+  const getVariantStyles = (variant: string) => {
+    switch(variant) {
+      case 'primary':
+        return {
+          className: 'text-white hover:-translate-y-0.5 transition-all duration-200 shadow-lg hover:shadow-xl',
+          style: { background: 'linear-gradient(135deg, #7848FE 0%, #9F7BFF 100%)' }
+        }
+      case 'secondary':
+        return {
+          className: 'bg-white hover:-translate-y-0.5 transition-all duration-200 border-2 hover:shadow-md',
+          style: { color: '#7848FE', borderColor: '#D3B9F9' }
+        }
+      case 'secondary-dark':
+        return {
+          className: 'bg-transparent text-white hover:bg-opacity-10 transition-all duration-200 border-2',
+          style: { borderColor: '#9F7BFF' }
+        }
+      case 'ghost':
+        return {
+          className: 'bg-transparent transition-all duration-200',
+          style: { color: '#280470' }
+        }
+      default:
+        return { className: '', style: {} }
+    }
+  }
+
+  const variantConfig = getVariantStyles(variant)
+
   const variants = {
-    primary: `
-      bg-gradient-to-r from-primary-500 to-primary-400 text-white
-      hover:from-primary-600 hover:to-primary-500 hover:shadow-purple hover:-translate-y-0.5
-      focus:ring-primary-400 focus:ring-offset-2
-      shadow-lg
-    `,
-    secondary: `
-      bg-white text-primary-600 border-2 border-primary-300
-      hover:border-primary-400 hover:bg-primary-50 hover:shadow-md hover:-translate-y-0.5
-      focus:ring-primary-300
-    `,
-    'secondary-dark': `
-      bg-transparent text-white border-2 border-primary-400
-      hover:border-primary-300 hover:bg-primary-900/20
-      focus:ring-primary-400
-    `,
-    ghost: `
-      bg-transparent text-neutral-700
-      hover:bg-primary-50 hover:text-primary-600
-      focus:ring-primary-300
-    `,
+    primary: variantConfig.className,
+    secondary: variantConfig.className,
+    'secondary-dark': variantConfig.className,
+    ghost: variantConfig.className,
   }
 
   const sizes = {
@@ -60,14 +72,14 @@ export function Button({
 
   if (href) {
     return (
-      <Link href={href} className={classes}>
+      <Link href={href} className={classes} style={variantConfig.style}>
         {children}
       </Link>
     )
   }
 
   return (
-    <button type={type} onClick={onClick} className={classes}>
+    <button type={type} onClick={onClick} className={classes} style={variantConfig.style}>
       {children}
     </button>
   )

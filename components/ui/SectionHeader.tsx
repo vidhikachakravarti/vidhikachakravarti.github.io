@@ -22,7 +22,7 @@ export function SectionHeader({
   return (
     <div className={cn('mb-12', alignmentClass, className)}>
       {tag && (
-        <div className="inline-flex items-center px-3 py-1 rounded-full bg-primary-200/50 text-primary-600 text-sm font-medium mb-4 border border-primary-300">
+        <div className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium mb-4 border" style={{ backgroundColor: '#EADEFC', color: '#280470', borderColor: '#9F7BFF' }}>
           {tag}
         </div>
       )}
