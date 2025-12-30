@@ -156,8 +156,8 @@ export function Reality({ children }: { children: React.ReactNode }) {
 
 export function Impact({ children }: { children: React.ReactNode }) {
   return (
-    <div className="mt-6 p-4 rounded-lg border-l-4 shadow-sm" style={{ background: 'linear-gradient(135deg, #EADEFC 0%, #D3B9F9 100%)', borderColor: '#7848FE' }}>
-      <p className="text-base font-bold" style={{ color: '#280470' }}>{children}</p>
+    <div className="mt-6 p-4 rounded-lg border-l-4 shadow-sm flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #EADEFC 0%, #D3B9F9 100%)', borderColor: '#7848FE' }}>
+      <p className="text-base font-bold text-center" style={{ color: '#280470' }}>{children}</p>
     </div>
   )
 }
