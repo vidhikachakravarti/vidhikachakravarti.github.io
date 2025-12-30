@@ -22,30 +22,31 @@ export function Button({
 }: ButtonProps) {
   const baseStyles = `
     inline-flex items-center justify-center
-    font-medium rounded-lg transition-all duration-200
+    font-medium rounded-lg transition-all duration-300 ease-out
     focus:outline-none focus:ring-2 focus:ring-offset-2
+    transform active:scale-95
   `
 
   const getVariantStyles = (variant: string) => {
     switch(variant) {
       case 'primary':
         return {
-          className: 'text-white hover:-translate-y-0.5 transition-all duration-200 shadow-lg hover:shadow-xl',
+          className: 'text-white hover:-translate-y-1 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-2xl relative overflow-hidden group',
           style: { background: 'linear-gradient(135deg, #7848FE 0%, #9F7BFF 100%)' }
         }
       case 'secondary':
         return {
-          className: 'bg-white hover:-translate-y-0.5 transition-all duration-200 border-2 hover:shadow-md',
+          className: 'bg-white hover:-translate-y-1 hover:scale-105 transition-all duration-300 border-2 hover:shadow-lg hover:border-opacity-100 group',
           style: { color: '#7848FE', borderColor: '#D3B9F9' }
         }
       case 'secondary-dark':
         return {
-          className: 'bg-transparent text-white hover:bg-opacity-10 transition-all duration-200 border-2',
+          className: 'bg-transparent text-white hover:bg-white/10 hover:-translate-y-0.5 transition-all duration-300 border-2 backdrop-blur-sm',
           style: { borderColor: '#9F7BFF' }
         }
       case 'ghost':
         return {
-          className: 'bg-transparent transition-all duration-200',
+          className: 'bg-transparent hover:bg-opacity-10 transition-all duration-300 hover:scale-105',
           style: { color: '#280470' }
         }
       default:

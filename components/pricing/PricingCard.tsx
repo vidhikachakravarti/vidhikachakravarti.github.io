@@ -1,5 +1,6 @@
 'use client'
 
+import { motion } from 'framer-motion'
 import { Card } from '../ui/Card'
 import { Button } from '../ui/Button'
 import { cn } from '@/lib/utils'
@@ -60,16 +61,26 @@ export function PricingCard({ tier, billing, featured }: PricingCardProps) {
     typeof data.price === 'object' ? data.price[billing] : data.price
 
   return (
-    <Card
-      theme={featured ? 'elevated' : 'bordered'}
-      padding="large"
-      hover
-      className={cn(
-        'relative h-full',
-        featured && 'border-2 shadow-2xl'
-      )}
-      style={featured ? { borderColor: '#7848FE', boxShadow: '0 0 40px rgba(120, 72, 254, 0.3)' } : {}}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      whileHover={{
+        y: -8,
+        transition: { duration: 0.3 }
+      }}
     >
+      <Card
+        theme={featured ? 'elevated' : 'bordered'}
+        padding="large"
+        hover
+        className={cn(
+          'relative h-full',
+          featured && 'border-2 shadow-2xl'
+        )}
+        style={featured ? { borderColor: '#7848FE', boxShadow: '0 0 40px rgba(120, 72, 254, 0.3)' } : {}}
+      >
       {featured && (
         <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 text-white text-sm font-bold rounded-full shadow-lg" style={{ background: 'linear-gradient(135deg, #7848FE 0%, #9F7BFF 100%)' }}>
           Most Popular
@@ -134,5 +145,6 @@ export function PricingCard({ tier, billing, featured }: PricingCardProps) {
         </Button>
       </div>
     </Card>
+    </motion.div>
   )
 }

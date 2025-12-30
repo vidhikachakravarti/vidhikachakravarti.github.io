@@ -29,13 +29,13 @@ export function Card({
   }
 
   const hoverStyles = hover
-    ? 'transition-all duration-200 hover:shadow-xl hover:-translate-y-1'
+    ? 'transition-all duration-300 ease-out hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02] cursor-pointer group'
     : ''
 
   return (
     <div
       className={cn(
-        'rounded-lg',
+        'rounded-lg transform',
         themes[theme],
         paddings[padding],
         hoverStyles,

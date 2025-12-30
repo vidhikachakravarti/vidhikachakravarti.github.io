@@ -28,10 +28,20 @@ export function ImpactMetrics() {
           {metrics.map((metric, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.05 }}
-              className="bg-white border border-neutral-200 rounded-lg p-6 shadow-sm"
+              initial={{ opacity: 0, y: 30, scale: 0.9 }}
+              animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+              transition={{
+                duration: 0.6,
+                delay: index * 0.1,
+                ease: [0.16, 1, 0.3, 1]
+              }}
+              whileHover={{
+                y: -5,
+                scale: 1.05,
+                boxShadow: '0 20px 40px rgba(120, 72, 254, 0.15)',
+                transition: { duration: 0.3 }
+              }}
+              className="bg-white border border-neutral-200 rounded-lg p-6 shadow-sm cursor-pointer"
             >
               {metric.stat ? (
                 <div className="text-center">
