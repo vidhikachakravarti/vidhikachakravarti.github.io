@@ -171,9 +171,6 @@ export function ProductFlow() {
       <div className="max-w-[1440px] mx-auto px-6">
         {/* Section intro */}
         <div className="text-center mb-24">
-          <div className="inline-flex items-center px-4 py-2 rounded-full border text-sm font-medium mb-4" style={{ backgroundColor: '#9F7BFF', borderColor: '#D3B9F9', color: 'white' }}>
-            Complete Platform
-          </div>
           <h2 className="text-5xl font-bold tracking-tight mb-6 text-white">
             From program design to measurable clinical impact
           </h2>
