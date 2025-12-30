@@ -257,21 +257,6 @@ export function ProductFlow() {
                   />
                 </motion.div>
 
-                {/* Content overlay */}
-                <div className="absolute inset-0 flex items-center justify-center p-12">
-                  <motion.div
-                    key={activeVisual}
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.5 }}
-                    className="text-center relative z-10"
-                  >
-                    <div
-                      className="text-base font-semibold leading-relaxed bg-white/90 backdrop-blur-sm px-6 py-3 rounded-lg"
-                      style={{ color: '#280470' }}
-                    >{activeVisual}</div>
-                  </motion.div>
-                </div>
               </div>
             </div>
           </div>
