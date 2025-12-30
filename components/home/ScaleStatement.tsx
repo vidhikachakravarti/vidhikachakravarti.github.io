@@ -30,7 +30,7 @@ export function ScaleStatement() {
           transition={{ duration: 0.5 }}
           className="text-[40px] leading-[48px] font-semibold text-white mt-4 mb-6"
         >
-          200+ patients per care team member — without chaos.
+          200+ patients per care team member, without chaos.
         </motion.h2>
 
         <motion.p
