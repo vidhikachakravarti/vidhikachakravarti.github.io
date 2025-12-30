@@ -34,7 +34,7 @@ const steps = [
   {
     number: 3,
     visual: 'Patient Assignment Screen',
-    title: 'Assign the Patient',
+    title: 'Automated Journey Assignment to the Patient',
     tagline: 'Patient walks in. Journey begins.',
     description:
       'Each patient is mapped to a journey that defines what happens, when, and by whom — from day one.',
