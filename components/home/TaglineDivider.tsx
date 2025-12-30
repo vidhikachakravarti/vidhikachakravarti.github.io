@@ -2,13 +2,11 @@
 
 import { motion, useMotionValue, useTransform } from 'framer-motion'
 import { useInView } from 'framer-motion'
-import { useRef, useState } from 'react'
-import { Button } from '../ui/Button'
+import { useRef } from 'react'
 
 export function TaglineDivider() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
-  const [isHovered, setIsHovered] = useState(false)
   const mouseX = useMotionValue(0)
   const mouseY = useMotionValue(0)
 
@@ -114,30 +112,15 @@ export function TaglineDivider() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
           className="relative"
         >
-          {/* Glowing border effect */}
-          <motion.div
-            animate={{
-              opacity: isHovered ? 1 : 0,
-              scale: isHovered ? 1 : 0.98,
-            }}
-            transition={{ duration: 0.3 }}
-            className="absolute -inset-4 rounded-2xl blur-xl opacity-0"
-            style={{ background: 'linear-gradient(135deg, #7848FE 0%, #9F7BFF 100%)' }}
-          />
-
           {/* Content card */}
           <motion.div
-            whileHover={{ y: -5 }}
-            transition={{ duration: 0.3 }}
             className="relative bg-white/60 backdrop-blur-xl rounded-2xl p-12 border shadow-xl"
-            style={{ borderColor: isHovered ? '#9F7BFF' : 'rgba(220, 219, 221, 0.5)' }}
+            style={{ borderColor: 'rgba(220, 219, 221, 0.5)' }}
           >
             {/* Headline with word-by-word animation */}
-            <div className="text-center mb-8">
+            <div className="text-center">
               <motion.h2 className="text-[44px] leading-[52px] font-semibold tracking-tight">
                 {['Journey', 'Tracker', 'turns', 'care', 'programs', 'into'].map((word, i) => (
                   <motion.span
@@ -180,21 +163,6 @@ export function TaglineDivider() {
                 ))}
               </motion.h2>
             </div>
-
-            {/* Interactive CTA */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 1.2 }}
-              className="flex items-center justify-center gap-4"
-            >
-              <Button variant="primary" size="large" href="/contact">
-                See How It Works
-              </Button>
-              <Button variant="secondary" size="large" href="/api">
-                View Documentation
-              </Button>
-            </motion.div>
           </motion.div>
         </motion.div>
       </div>
