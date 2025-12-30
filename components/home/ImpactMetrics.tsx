@@ -58,7 +58,7 @@ export function ImpactMetrics() {
                 />
 
                 {/* Content */}
-                <div className="relative z-10">
+                <div className="relative z-10 flex items-center justify-center h-full">
                   {metric.stat ? (
                     <div className="text-center space-y-3">
                       <motion.div
@@ -77,8 +77,7 @@ export function ImpactMetrics() {
                       </div>
                     </div>
                   ) : (
-                    <div className="flex items-center justify-center h-full min-h-[120px]">
-                      <div className="text-center space-y-2">
+                    <div className="text-center space-y-2">
                         <div
                           className="text-2xl font-bold"
                           style={{
@@ -93,7 +92,6 @@ export function ImpactMetrics() {
                         <div className="text-base font-medium leading-relaxed" style={{ color: '#3F3B3A' }}>
                           {metric.description}
                         </div>
-                      </div>
                     </div>
                   )}
                 </div>
