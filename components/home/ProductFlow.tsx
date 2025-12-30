@@ -118,38 +118,23 @@ function JourneyCard({ step, isLast }: { step: typeof steps[0]; isLast: boolean 
 
   return (
     <div className="relative snap-center py-12">
-      <div ref={ref} className="flex gap-8 items-center max-w-5xl mx-auto px-6">
+      <div ref={ref} className="flex gap-12 items-center max-w-6xl mx-auto px-6">
         {/* Image with connector line */}
         <div className="relative flex-shrink-0">
-          {/* Vertical connector line */}
-          <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-0.5" style={{ backgroundColor: '#3F3B3A' }}>
-            {/* Active portion */}
-            {!isLast && (
-              <div
-                className="absolute top-1/2 left-0 w-full transition-all duration-700"
-                style={{
-                  height: isInView ? '50%' : '0%',
-                  backgroundColor: '#7848FE',
-                }}
-              />
-            )}
-          </div>
-
-          {/* Node/dot at center */}
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+          {/* Vertical connector line - clean line only, no dots */}
+          {!isLast && (
             <div
-              className="w-3 h-3 rounded-full transition-all duration-500"
+              className="absolute left-1/2 -translate-x-1/2 top-1/2 w-0.5 transition-all duration-700"
               style={{
+                height: isInView ? '100%' : '100%',
                 backgroundColor: isInView ? '#7848FE' : '#3F3B3A',
-                border: isInView ? '2px solid #9F7BFF' : '2px solid #3F3B3A',
-                boxShadow: isInView ? '0 0 12px rgba(120, 72, 254, 0.6)' : 'none',
               }}
             />
-          </div>
+          )}
 
-          {/* Image container */}
+          {/* Image container - larger size */}
           <div
-            className="relative w-80 h-64 rounded-xl overflow-hidden transition-all duration-500"
+            className="relative w-[480px] h-[360px] rounded-xl overflow-hidden transition-all duration-500"
             style={{
               border: isInView ? '2px solid #7848FE' : '2px solid #2a2a2a',
               boxShadow: isInView ? '0 4px 20px rgba(120, 72, 254, 0.3)' : 'none',
@@ -171,7 +156,7 @@ function JourneyCard({ step, isLast }: { step: typeof steps[0]; isLast: boolean 
               }}
             />
             {/* Title overlay on image */}
-            <div className="absolute inset-0 flex flex-col justify-end p-6">
+            <div className="absolute inset-0 flex flex-col justify-end p-8">
               <div
                 className="absolute inset-0"
                 style={{
@@ -180,7 +165,7 @@ function JourneyCard({ step, isLast }: { step: typeof steps[0]; isLast: boolean 
               />
               <div className="relative z-10">
                 <h3
-                  className="text-2xl font-semibold transition-all duration-500"
+                  className="text-3xl font-semibold transition-all duration-500"
                   style={{
                     color: isInView ? 'white' : '#6B6B6B',
                     opacity: isInView ? 1 : 0.5,
