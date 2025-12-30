@@ -34,14 +34,14 @@ export function ImpactMetrics() {
             >
               {metric.stat ? (
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-primary-600 mb-2">
+                  <div className="text-4xl font-bold mb-2" style={{ color: '#7848FE' }}>
                     {metric.stat}
                   </div>
-                  <div className="text-sm text-neutral-600">{metric.label}</div>
+                  <div className="text-sm" style={{ color: '#3F3B3A' }}>{metric.label}</div>
                 </div>
               ) : (
                 <div className="text-center">
-                  <div className="text-base text-neutral-700">{metric.label}</div>
+                  <div className="text-base" style={{ color: '#3F3B3A' }}>{metric.label}</div>
                 </div>
               )}
             </motion.div>

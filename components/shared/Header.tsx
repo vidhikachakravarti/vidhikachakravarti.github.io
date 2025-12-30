@@ -27,16 +27,12 @@ export function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={cn(
-                    'text-sm font-medium transition-colors relative',
-                    pathname === link.href
-                      ? 'text-primary-600'
-                      : 'text-neutral-600 hover:text-primary-600'
-                  )}
+                  className="text-sm font-medium transition-colors relative"
+                  style={{ color: pathname === link.href ? '#7848FE' : '#817E77' }}
                 >
                   {link.label}
                   {pathname === link.href && (
-                    <span className="absolute -bottom-[21px] left-0 right-0 h-0.5 bg-primary-600" />
+                    <span className="absolute -bottom-[21px] left-0 right-0 h-0.5" style={{ backgroundColor: '#7848FE' }} />
                   )}
                 </Link>
               ))}

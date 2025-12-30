@@ -121,7 +121,7 @@ export default function APIPage() {
           <div className="max-w-[900px] mx-auto px-12 py-12">
             {/* API Hero */}
             <div className="mb-16">
-              <div className="inline-flex items-center px-3 py-1 rounded-full bg-accent-900/50 text-accent-400 text-sm font-medium mb-4">
+              <div className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium mb-4" style={{ backgroundColor: 'rgba(40, 4, 112, 0.5)', color: '#9F7BFF' }}>
                 API Documentation
               </div>
               <h1 className="text-[40px] leading-[48px] font-semibold text-white mt-4 mb-6">
@@ -167,19 +167,19 @@ export default function APIPage() {
                 </h2>
                 <ol className="space-y-4 mb-6">
                   <li className="text-neutral-200">
-                    <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-accent-600 text-white text-sm font-semibold mr-3">
+                    <span className="inline-flex items-center justify-center w-6 h-6 rounded-full text-white text-sm font-semibold mr-3" style={{ backgroundColor: '#7848FE' }}>
                       1
                     </span>
                     Get your API key from the dashboard
                   </li>
                   <li className="text-neutral-200">
-                    <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-accent-600 text-white text-sm font-semibold mr-3">
+                    <span className="inline-flex items-center justify-center w-6 h-6 rounded-full text-white text-sm font-semibold mr-3" style={{ backgroundColor: '#7848FE' }}>
                       2
                     </span>
                     Install the SDK (optional)
                   </li>
                   <li className="text-neutral-200">
-                    <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-accent-600 text-white text-sm font-semibold mr-3">
+                    <span className="inline-flex items-center justify-center w-6 h-6 rounded-full text-white text-sm font-semibold mr-3" style={{ backgroundColor: '#7848FE' }}>
                       3
                     </span>
                     Make your first request
@@ -210,8 +210,8 @@ console.log(journeys);`}
                   All API requests require authentication using an API key. Include
                   your API key in the Authorization header as a Bearer token.
                 </p>
-                <div className="bg-accent-900/20 border border-accent-700 rounded-lg p-4">
-                  <p className="text-accent-300 text-sm">
+                <div className="rounded-lg p-4" style={{ backgroundColor: 'rgba(40, 4, 112, 0.2)', borderWidth: '1px', borderColor: '#280470' }}>
+                  <p className="text-sm" style={{ color: '#D3B9F9' }}>
                     <strong>Note:</strong> Keep your API keys secure and never
                     expose them in client-side code.
                   </p>

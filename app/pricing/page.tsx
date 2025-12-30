@@ -18,7 +18,7 @@ export default function PricingPage() {
       {/* Hero */}
       <section className="relative pt-20 pb-16 bg-gradient-to-b from-neutral-0 to-neutral-50">
         <div className="max-w-[768px] mx-auto px-6 text-center">
-          <div className="inline-flex items-center px-3 py-1 rounded-full bg-accent-50 text-accent-600 text-sm font-medium mb-4">
+          <div className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium mb-4" style={{ backgroundColor: '#EADEFC', color: '#7848FE' }}>
             Pricing
           </div>
           <h1 className="text-[48px] leading-[56px] font-semibold tracking-tight text-neutral-900 mt-4 mb-6">
@@ -48,10 +48,8 @@ export default function PricingPage() {
           </button>
           <button
             onClick={() => setBilling(billing === 'monthly' ? 'annual' : 'monthly')}
-            className={cn(
-              'relative w-12 h-6 rounded-full transition-colors duration-200',
-              billing === 'annual' ? 'bg-accent-600' : 'bg-neutral-300'
-            )}
+            className="relative w-12 h-6 rounded-full transition-colors duration-200"
+            style={{ backgroundColor: billing === 'annual' ? '#7848FE' : '#C4C4C4' }}
           >
             <div
               className={cn(
@@ -70,7 +68,7 @@ export default function PricingPage() {
             )}
           >
             Annual{' '}
-            <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-accent-100 text-accent-700 text-xs font-medium ml-2">
+            <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium ml-2" style={{ backgroundColor: '#D3B9F9', color: '#280470' }}>
               Save 20%
             </span>
           </button>

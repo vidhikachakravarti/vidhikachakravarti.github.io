@@ -77,7 +77,7 @@ export function RoleValueProps() {
                   </ul>
 
                   <div className="pt-4 mt-4 border-t border-neutral-200">
-                    <p className="text-base italic text-accent-900 font-medium">
+                    <p className="text-base italic font-medium" style={{ color: '#280470' }}>
                       {role.outcome}
                     </p>
                   </div>

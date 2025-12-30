@@ -167,14 +167,8 @@ export function ProductFlow() {
   }, [])
 
   return (
-    <section className="relative text-white py-32 overflow-hidden" style={{ background: 'linear-gradient(135deg, #280470 0%, #1405D6 100%)' }}>
-      {/* Decorative circles */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 right-20 w-96 h-96 rounded-full" style={{ backgroundColor: '#7848FE', opacity: 0.3 }} />
-        <div className="absolute bottom-20 left-20 w-96 h-96 rounded-full" style={{ backgroundColor: '#9F7BFF', opacity: 0.2 }} />
-      </div>
-
-      <div className="max-w-[1440px] mx-auto px-6 relative z-10">
+    <section className="relative text-white py-32" style={{ backgroundColor: '#000000' }}>
+      <div className="max-w-[1440px] mx-auto px-6">
         {/* Section intro */}
         <div className="text-center mb-24">
           <div className="inline-flex items-center px-4 py-2 rounded-full border text-sm font-medium mb-4" style={{ backgroundColor: '#9F7BFF', borderColor: '#D3B9F9', color: 'white' }}>

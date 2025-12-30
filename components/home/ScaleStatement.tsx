@@ -20,7 +20,7 @@ export function ScaleStatement() {
       className="relative py-32 bg-gradient-to-b from-neutral-900 via-neutral-800 to-white"
     >
       <div className="max-w-[768px] mx-auto px-6 text-center">
-        <div className="inline-flex items-center px-3 py-1 rounded-full bg-accent-900/50 text-accent-400 text-sm font-medium mb-4">
+        <div className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium mb-4" style={{ backgroundColor: 'rgba(40, 4, 112, 0.5)', color: '#9F7BFF' }}>
           Built to Scale
         </div>
 
@@ -53,8 +53,8 @@ export function ScaleStatement() {
               className="bg-white rounded-lg p-4 shadow-sm"
             >
               <div className="flex items-start gap-2">
-                <span className="text-accent-600 mt-1">✔</span>
-                <span className="text-sm text-neutral-700">{impact}</span>
+                <span className="mt-1" style={{ color: '#7848FE' }}>✔</span>
+                <span className="text-sm" style={{ color: '#3F3B3A' }}>{impact}</span>
               </div>
             </motion.div>
           ))}

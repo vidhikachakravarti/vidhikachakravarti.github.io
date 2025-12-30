@@ -55,8 +55,8 @@ export default function SolutionsPage() {
             {solutions.map((solution, index) => (
               <Card key={index} theme="bordered" padding="large" hover>
                 <div className="space-y-6">
-                  <div className="w-12 h-12 bg-accent-100 rounded-full flex items-center justify-center">
-                    <div className="w-6 h-6 bg-accent-600 rounded-full" />
+                  <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ backgroundColor: '#D3B9F9' }}>
+                    <div className="w-6 h-6 rounded-full" style={{ backgroundColor: '#7848FE' }} />
                   </div>
 
                   <h3 className="text-2xl font-semibold text-neutral-900">
@@ -73,7 +73,8 @@ export default function SolutionsPage() {
 
                   <a
                     href="#"
-                    className="inline-flex items-center text-accent-600 hover:text-accent-700 font-medium"
+                    className="inline-flex items-center font-medium"
+                    style={{ color: '#7848FE' }}
                   >
                     Learn more →
                   </a>

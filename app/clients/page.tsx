@@ -44,8 +44,8 @@ export default function ClientsPage() {
             {industries.map((industry, index) => (
               <Card key={index} theme="bordered" padding="large" hover>
                 <div className="text-center space-y-4">
-                  <div className="w-12 h-12 bg-accent-100 rounded-full flex items-center justify-center mx-auto">
-                    <div className="w-6 h-6 bg-accent-600 rounded-full" />
+                  <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto" style={{ backgroundColor: '#D3B9F9' }}>
+                    <div className="w-6 h-6 rounded-full" style={{ backgroundColor: '#7848FE' }} />
                   </div>
                   <h3 className="text-xl font-semibold text-neutral-900">
                     {industry.title}
